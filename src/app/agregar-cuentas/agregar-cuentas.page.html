@@ -1,0 +1,45 @@
+<section id="wrapper" class="login-register login-sidebar"
+  style="background-image:url(../../assets/images/background/login-register.jpg);">
+ 
+<form><ion-card-content>
+       <ion-item>
+        <ion-input  [(ngModel)]="user.email" name="email" color="primary" placeholder= "Nombre Compañia"></ion-input>
+       </ion-item>
+       <br>
+       <ion-item>
+      
+        <ion-input color="primary" placeholder= "Contraseña"type="password" ></ion-input>
+       </ion-item>
+       <br>
+       
+       <ion-button (click)="idk()"   >Register</ion-button>
+
+       <ion-button expand= "full" (click)="signIn()" *ngIf="!user"  >
+         
+         <ion-icon name="logo-google" slot="start"></ion-icon> Sign in with Google</ion-button>
+         <ion-button expand= "full" (click)="signOut()" *ngIf="user"  > Sign Out</ion-button>
+         <ion-button expand= "full" (click)="refresh()" *ngIf="!user"  > Try refresh</ion-button>
+         
+         <ion-item *ngIf="user">
+           
+           <ion-avatar slot="start">
+            <img [src]="user.ImageUrl"/>
+
+          </ion-avatar>
+          
+          <ion-label>
+            {{user.givenName}} {{user.familyName}}
+        
+          <p>{{user.email}}</p>
+          
+          </ion-label>
+          
+          </ion-item>
+        </ion-card-content>
+
+      </form>
+
+     
+
+
+</section>

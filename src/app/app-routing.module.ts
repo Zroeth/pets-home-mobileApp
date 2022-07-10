@@ -13,9 +13,18 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'agregar-cuentas',
     pathMatch: 'full',
   },
+  {
+    path: 'agregar-cuentas',
+    loadChildren: () => import('./agregar-cuentas/agregar-cuentas.module').then( m => m.AgregarCuentasPageModule)
+  },  {
+    path: 'agregar-cuentas',
+    loadChildren: () => import('./agregar-cuentas/agregar-cuentas.module').then( m => m.AgregarCuentasPageModule)
+  },
+
+
 ];
 
 @NgModule({
